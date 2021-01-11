@@ -21,7 +21,7 @@ public abstract class Module {
     public void enable() {
         Set<Requirement> failedRequirements = Arrays.stream(getRequirements()).filter(requirement -> !requirement.check()).collect(Collectors.toSet());
         if(failedRequirements.isEmpty()) {
-            //TechDiscordBot.log("Enabling Module " + getName() + "..");
+            TechDiscordBot.log("Enabling Module " + getName() + "..");
             onEnable();
             enabled = true;
         } else {
